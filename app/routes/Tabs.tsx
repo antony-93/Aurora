@@ -12,7 +12,9 @@ export default function Tabs() {
         headerShown: false,
         tabBarActiveTintColor: "#4f46e5",
         tabBarInactiveTintColor: "#9ca3af",
-        tabBarStyle: { height: 60 },
+        tabBarStyle: {
+            height: 60,
+        },
         tabBarIconStyle: {
             marginBottom: 3,
             marginTop: 2

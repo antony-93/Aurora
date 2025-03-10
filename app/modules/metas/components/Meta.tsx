@@ -37,8 +37,9 @@ const styles = StyleSheet.create({
 
     descricao: {
         fontFamily: 'Inter_400Regular',
-        fontSize: 14,
+        fontSize: 16,
         color: '#374151',
+        flexShrink: 1
     },
 
     checkedDescricao: {
