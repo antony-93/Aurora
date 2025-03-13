@@ -68,7 +68,7 @@ export default function Goals() {
                 </View>
 
                 {groupedGoals.length === 0 && (
-                    <View style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 120 }}>
+                    <View style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 110 }}>
                         <View style={{ marginBottom: 20, width: 120, height: 120, backgroundColor: '#eef2ff', borderRadius: 60, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                             <Icons.CheckCircle size={60} color={'#a5b4fc'} />
                         </View>
