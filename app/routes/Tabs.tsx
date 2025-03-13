@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ListTodo, CheckCircle, BarChart3 } from "lucide-react-native";
-import Metas from "../modules/metas/screens/Metas";
+import Goals from "../modules/metas/screens/Goals";
 import Rotina from "../modules/rotina/screens/Rotina";
 import Desempenho from "../modules/desempenho/screens/Desempenho";
 
@@ -27,7 +27,7 @@ export default function Tabs() {
 
     return (
         <Tab.Navigator screenOptions={tabConfig} initialRouteName="Metas">
-            <Tab.Screen name="Metas" component={Metas} options={{ tabBarIcon: ({ color }) => (<CheckCircle color={color} size={iconSize} />) }} />
+            <Tab.Screen name="Metas" component={Goals} options={{ tabBarIcon: ({ color }) => (<CheckCircle color={color} size={iconSize} />) }} />
             <Tab.Screen name="Rotina" component={Rotina} options={{ tabBarIcon: ({ color }) => (<ListTodo color={color} size={iconSize} />) }} />
             <Tab.Screen name="Desempenho" component={Desempenho} options={{ tabBarIcon: ({ color }) => (<BarChart3 color={color} size={iconSize} />) }} />
         </Tab.Navigator>

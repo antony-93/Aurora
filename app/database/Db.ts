@@ -16,18 +16,22 @@ class Database {
     }
 
     private async configureTables() {
-        await this.createCategoryTable()
-        await this.createGoalTable()
+        try {
+            await this.createCategoryTable()
+            await this.createGoalTable()
+        } catch (e) {
+            console.log("Erro ao criar tabelas:", e)
+        }
     }
 
     private async createCategoryTable() {
         const result = await this.db.getAllAsync(
-            `SELECT name FROM sqlite_master WHERE type='table' AND name='usuarios';`
+            `SELECT name FROM sqlite_master WHERE type='table' AND name='category';`
         );
 
         if (result.length > 0) return;
 
-        this.db.execAsync(`
+        await this.db.execAsync(`
             CREATE TABLE category (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 description TEXT NOT NULL,
@@ -46,11 +50,11 @@ class Database {
     }
 
     private async createGoalTable() {
-        this.db.execAsync(`
+        await this.db.execAsync(`
             CREATE TABLE IF NOT EXISTS goal (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                title TEXT NOT NULL,
-                description TEXT,
+                description TEXT NOT NULL,
+                checked INTEGER DEFAULT 0,
                 category_id INTEGER NOT NULL,
                 FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
             );

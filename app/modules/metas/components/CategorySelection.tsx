@@ -10,7 +10,7 @@ interface CategorySelectionProps {
 }
 
 export default function CategorySelection({ category, style, onPress }: CategorySelectionProps) {
-    const { id, description, icon, color, backgroundColor } = category,
+    const { description, icon, color, backgroundColor } = category,
         IconComponent = Icons[icon] as React.ComponentType<any>;
 
     return (
