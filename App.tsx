@@ -1,9 +1,7 @@
 import { useFonts as useInter, Inter_500Medium, Inter_600SemiBold, Inter_700Bold, Inter_400Regular } from '@expo-google-fonts/inter';
-import { ActivityIndicator, Text, View } from 'react-native';
-import Router from './app/routes/Router';
+import { ActivityIndicator, SafeAreaView, Text, View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
-import { useEffect, useState } from 'react';
-import Database from './app/database/Db';
+import Router from 'src/app/routes/Router';
 
 export default function App() {
   const [interLoaded] = useInter({
@@ -13,18 +11,7 @@ export default function App() {
     Inter_700Bold
   })
 
-  const [dbLoaded, setDbLoaded] = useState(false);
-
-  useEffect(() => {
-    async function initDatabase() {
-      await Database.init();
-      setDbLoaded(true);
-    }
-
-    initDatabase();
-  }, []);
-
-  if (!interLoaded || !dbLoaded) {
+  if (!interLoaded) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator size="large" color="#000" />
@@ -35,7 +22,11 @@ export default function App() {
 
   return (
     <PaperProvider>
-      <Router />
+      <View style={[{ flex: 1, backgroundColor: 'white' }]}>
+        <SafeAreaView style={{ flex: 1 }}>
+          <Router />
+        </SafeAreaView>
+      </View>
     </PaperProvider>
   );
 }

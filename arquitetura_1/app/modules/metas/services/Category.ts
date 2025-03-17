@@ -1,7 +1,7 @@
 import Database from '../../../database/Db';
 import Category from '../model/Category';
 
-class CategoryService {
+class Service {
     async getCategories(): Promise<Category[]> {
         try {
             return await Database.getDatabase().getAllAsync<Category>(
@@ -14,4 +14,6 @@ class CategoryService {
     }
 }
 
-export default new CategoryService()
+const CategoryService = new Service();
+
+export default CategoryService;

@@ -3,9 +3,9 @@ import { ChevronLeft } from "lucide-react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import Category from "../model/Category";
-import CategoryService from "../services/Category";
 import CategorySelection from "../components/CategorySelection";
 import { rowVerticalCenter } from "@/Styles";
+import CategoryService from "../services/Category";
 
 export default function SelectCategory() {
     const [categories, setCategories] = useState<Category[]>([]),

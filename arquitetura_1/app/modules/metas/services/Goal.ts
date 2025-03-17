@@ -1,7 +1,7 @@
 import Goal from "../model/Goal";
 import Database from "../../../database/Db"
 
-class GoalService {
+class Service {
     async insertGoal({ description, category_id }: Goal) {
         try {
             await Database.getDatabase().runAsync(
@@ -61,4 +61,6 @@ class GoalService {
     }
 }
 
-export default new GoalService();
+const GoalService = new Service();
+
+export default GoalService;
