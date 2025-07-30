@@ -6,7 +6,9 @@
 
 ### 🚧 Projeto em Desenvolvimento
 
-**Tempo de desenvolvimento:** ![Development Time](https://img.shields.io/badge/Development_Time-2%20weeks-blue?style=for-the-badge)
+**Tempo restante:** ![Time Remaining](https://img.shields.io/badge/Time_Remaining-2%20weeks-orange?style=for-the-badge)
+
+**Status:** ![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=for-the-badge)
 
 ---
 
