@@ -6,7 +6,7 @@
 
 ### 🚧 Projeto em Desenvolvimento
 
-**Tempo de desenvolvimento:** <span id="dev-counter">Calculando...</span>
+**Tempo de desenvolvimento:** ![Development Time](https://img.shields.io/badge/Development_Time-2%20weeks-blue?style=for-the-badge)
 
 ---
 
@@ -42,23 +42,3 @@ Este projeto está licenciado sob a **MIT License - Educational Use Only**.
 </div>
 
 </div>
-
-<script>
-// Contador de desenvolvimento
-function updateCounter() {
-    const startDate = new Date('2024-01-15'); // Ajuste para a data real do início
-    const now = new Date();
-    const diffTime = Math.abs(now - startDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    const diffWeeks = Math.floor(diffDays / 7);
-    const remainingDays = diffDays % 7;
-    
-    const counterElement = document.getElementById('dev-counter');
-    if (counterElement) {
-        counterElement.innerHTML = `<strong>${diffWeeks} semanas e ${remainingDays} dias</strong>`;
-    }
-}
-
-// Atualiza o contador quando a página carrega
-document.addEventListener('DOMContentLoaded', updateCounter);
-</script>
